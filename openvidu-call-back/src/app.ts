@@ -1,15 +1,16 @@
 
 import * as express from 'express';
 import { SERVER_PORT, OPENVIDU_URL, OPENVIDU_SECRET, CALL_OPENVIDU_CERTTYPE } from './config';
-import {app as callController} from './controllers/CallController';
+import { app as callController } from './controllers/CallController';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
 const app = express();
-
+const cors = require("cors");
 
 app.use(express.static('public'));
 app.use(express.json());
+app.use(cors());
 
 app.use('/call', callController);
 

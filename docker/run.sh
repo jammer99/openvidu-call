@@ -11,7 +11,7 @@ if [[ -z "$1" ]] || [[ -z "$2" ]]; then
     exit 1
 fi
 
-RELEASE_VERSION=$1
+RELEASE_VERSION=2.15.1
 BRANCH_NAME=$2
 CALL_BASE_HREF=/
 DEMOS_BASE_HREF=/openvidu-call/
@@ -26,12 +26,10 @@ printf '\n          Branch to build:  %s'  "${BRANCH_NAME}"
 printf '\n     -------------------------------------------------------------'
 printf '\n'
 
-docker build -f prod.dockerfile -t openvidu/openvidu-call:${RELEASE_VERSION} --build-arg BRANCH_NAME=${BRANCH_NAME} --build-arg BASE_HREF=${CALL_BASE_HREF} .
-docker build -f prod.dockerfile -t openvidu/openvidu-call:${RELEASE_VERSION}-demos --build-arg BRANCH_NAME=${BRANCH_NAME} --build-arg BASE_HREF=${DEMOS_BASE_HREF} .
+docker build -f prod.dockerfile -t localhost/openvidu-call:${RELEASE_VERSION} --build-arg BRANCH_NAME=${BRANCH_NAME} --build-arg BASE_HREF=${CALL_BASE_HREF} .
 
 printf '\n'
 printf '\n     Pushing containers to OpenVidu DockerHub'
 printf '\n'
 
-docker push openvidu/openvidu-call:${RELEASE_VERSION}
-docker push openvidu/openvidu-call:${RELEASE_VERSION}-demos
+
