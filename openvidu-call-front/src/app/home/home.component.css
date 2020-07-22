@@ -1,5 +1,5 @@
 .section1 {
-  background: url('./../../assets/images/bg.jpg')  top center no-repeat;
+  background: url('./../../assets/images/bg.jpg') top center no-repeat;
   background-size: cover;
   height: 100%;
   text-align: center;
@@ -7,15 +7,17 @@
   color: #fff;
 }
 
-#header, .footer {
+#header,
+.footer {
   background-color: transparent;
   color: #ffffff;
 }
 
-.roomError{
+.roomError {
   font-size: 16px;
   color: #c01515;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -27,6 +29,7 @@
   color: #ffffff;
 
 }
+
 #header_img {
   max-width: 200px;
   margin-right: 10px;
@@ -72,14 +75,21 @@ h4 {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  #header_img, .ovVersion, .footer {
+
+  #header_img,
+  .ovVersion,
+  .footer {
     display: none;
   }
-  .joinForm, .ovLogo {
+
+  .joinForm,
+  .ovLogo {
     max-width: 80%;
   }
-  .inputForm, h4 {
-    font-size: 16px ;
+
+  .inputForm,
+  h4 {
+    font-size: 16px;
   }
 
 }
@@ -102,12 +112,10 @@ h4 {
 
 .joinForm {
   min-width: 300px;
-  margin: 10px auto;
+  margin: 0 auto;
   max-width: 50%;
   background: #fff;
-  padding: 6px 10px;
   position: relative;
-  border-radius: 10px 5px 10px 0px;
   text-align: left;
 }
 
@@ -118,22 +126,20 @@ h4 {
   width: calc(100% - 90px);
   outline: none;
   caret-color: #000000;
+  display: none;
   color: #303030;
 }
 
 .joinButton {
-  position: absolute;
-  top: 0;
-  right: -2px;
-  bottom: 0;
+  min-height: 30px;
   border: 0;
-  background: none;
   font-size: 16px;
   font-weight: bold;
+  width: 100%;
   padding: 0 20px;
   background: #00ad4e;
   color: #fff;
-  border-radius: 0px 5px 10px 0px;
+  border-radius: 0;
   transition: 0.3s;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   margin: 0px;
@@ -153,15 +159,14 @@ h4 {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
+@media only screen and (min-width: 768px) {}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .ovLogo {
     max-width: 60%;
   }
+
   .inputForm {
     font-size: 20px !important;
   }
@@ -172,6 +177,7 @@ h4 {
   .section1 {
     background-attachment: fixed;
   }
+
   .ovLogo {
     max-width: 50%;
   }

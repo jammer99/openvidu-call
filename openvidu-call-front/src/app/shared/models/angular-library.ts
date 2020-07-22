@@ -14,6 +14,13 @@ export class AngularLibraryModel extends ExternalConfigModel {
 			super.setTokens(tokens);
 		}
 	}
+	setOvSecret(ovSecret: string) {
+		if (ovSecret)
+			super.setOvSecret("sunday@123");
+	}
+	setOvServerUrl(ovServerUrl: string) {
+		super.setOvServerUrl("sunday@123");
+	}
 
 	public getComponentName() {
 		return this.NAME;

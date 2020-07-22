@@ -5,8 +5,8 @@ import { OvSettingsModel } from './ovSettings';
 export class ExternalConfigModel {
 	protected ovSettings: OvSettingsModel;
 	protected sessionName: string;
-	protected ovServerUrl: string;
-	protected ovSecret: string;
+	protected ovServerUrl: string = "https://ov.sundaymobility.com";
+	protected ovSecret: string= "sunday@123";
 	protected theme = Theme.DARK;
 	protected nickname: string;
 	protected tokens: string[];

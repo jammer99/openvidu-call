@@ -15,7 +15,8 @@ export class NetworkService {
 
 	constructor(private http: HttpClient, private loggerSrv: LoggerService) {
 		this.log = this.loggerSrv.get('NetworkService');
-		this.baseHref = '/' + (!!window.location.pathname.split('/')[1] ? window.location.pathname.split('/')[1] + '/' : '');
+		this.baseHref="https://ov.sundaymobility.com/";
+		// this.baseHref = '/' + (!!window.location.pathname.split('/')[1] ? window.location.pathname.split('/')[1] + '/' : '');
 	}
 
 	async getToken(sessionId: string, openviduServerUrl: string, openviduSecret: string): Promise<string> {

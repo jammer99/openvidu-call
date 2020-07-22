@@ -44,7 +44,7 @@ export class UtilsService {
 	}
 
 	getOpenViduAvatar(): string {
-		return 'https://openvidu.io/img/logos/openvidu_globe_bg_transp_cropped.png';
+		return 'https://ov.sundaymobility.com/assets/images/openvidu_globe_bg_transp_cropped.png';
 	}
 
 	handlerScreenShareError(error: any) {
