@@ -1,6 +1,6 @@
 .cardHeader {
   background-color: #cccccc;
-  border-radius: 14px 14px 0px 0px;
+  border-radius: 0px;
   text-align: center;
   height: 50px;
 }
@@ -156,7 +156,7 @@
 
 #avatarContainer,
 #avatarImg {
-  border-radius: 25%;
+  border-radius: 0;
 }
 
 #optionsContent {
@@ -980,7 +980,7 @@ mat-card {
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   outline: 0;
-  border-radius: 15px;
+  border-radius: 0px;
 }
 .modal-backdrop {
   position: fixed;

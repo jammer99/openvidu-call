@@ -77,7 +77,7 @@
 						<div
 							id="avatarContainer"
 							(click)="setAvatar('video')"
-							[style.background]="avatarSelected === 'video' ? 'lightgreen' : 'transparent'"
+							[style.background]="avatarSelected === 'video' ? 'white' : 'transparent'"
 						>
 							<div id="imgText" *ngIf="!videoAvatar">
 								<span>Press Avatar Button</span>
@@ -87,7 +87,7 @@
 						<div
 							id="avatarContainer"
 							(click)="setAvatar('random')"
-							[style.background]="avatarSelected === 'random' ? 'lightgreen' : 'transparent'"
+							[style.background]="avatarSelected === 'random' ? 'white' : 'transparent'"
 						>
 							<mat-spinner id="imgText" [diameter]="70" *ngIf="!randomAvatar" color="accent"></mat-spinner>
 							<img id="avatarImg" *ngIf="randomAvatar" [src]="randomAvatar" />
