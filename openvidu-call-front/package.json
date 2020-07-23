@@ -62,7 +62,7 @@
         "build:openvidu-angular": "node openvidu-angular-build.js && ./node_modules/@angular/cli/bin/ng build openvidu-angular --prod",
         "build:openvidu-webcomponent": "node -e \"require('./openvidu-webcomponent-build.js').prepareWebcomponent()\" && ./node_modules/@angular/cli/bin/ng build --prod --output-hashing none && node -e \"require('./openvidu-webcomponent-build.js').buildWebcomponent()\"",
         "copy:backend": "cp -a dist/openvidu-call/.  ../../app/sundayvc/www/",
-        "copy:backend-prod": "mkdir -p ../openvidu-call-back/dist/public && cp -a dist/openvidu-call/. ../openvidu-call-back/public/",
+        "copy:backend-prod": "mkdir -p ../openvidu-call-back/dist/public && cp -a dist/openvidu-call/. ../openvidu-call-back/dist/public/",
         "e2e": "ng e2e",
         "lint": "ng lint",
         "pack:openvidu-angular": "cd dist/openvidu-angular && npm pack",
