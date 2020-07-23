@@ -199,8 +199,5 @@
       }
     }
   },
-  "defaultProject": "openvidu-call",
-  "cli": {
-    "analytics": "78800071-ac58-4a87-a089-3e267ae0d0e2"
-  }
+  "defaultProject": "openvidu-call"
 }
