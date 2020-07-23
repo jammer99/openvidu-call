@@ -16,45 +16,55 @@ const onDeviceReady = () => {
     flag = true;
   }
 };
-if (typeof window['cordova'] !== 'undefined') {
-  console.log("cordova")
-  document.addEventListener('deviceready', () => {
+setTimeout(() => {
+  ready()
+}, 50);
+function ready() {
+  if (typeof window['cordova'] !== 'undefined') {
+    console.log("cordova")
+    document.addEventListener('deviceready', () => {
 
-    var permissions = window['cordova'].plugins.permissions;
-    var list = [
-      permissions.CAMERA,
-      permissions.RECORD_AUDIO,
-      permissions.MODIFY_AUDIO_SETTINGS,
-      permissions.BLUETOOTH,
-      permissions.BLUETOOTH_ADMIN
-    ];
-    permissions.checkPermission(list, checkPermissionCallback, errorCallback);
-    var errorCallback = function () {
-      alert('Permissions not set');
-    }
-    function checkPermissionCallback(status) {
-      if (!status.hasPermission) {
-        var errorCallback = function () {
-          alert('Permissions not set');
+
+      if (window['cordova'].platformId == "ios") {
+        console.log('Initializing iosrtc');
+        window['cordova'].plugins.iosrtc.registerGlobals();
+      }
+      var permissions = window['cordova'].plugins.permissions;
+      var list = [
+        permissions.CAMERA,
+        permissions.RECORD_AUDIO,
+        permissions.MODIFY_AUDIO_SETTINGS,
+        permissions.BLUETOOTH,
+        permissions.BLUETOOTH_ADMIN
+      ];
+      permissions.checkPermission(list, checkPermissionCallback, errorCallback);
+      var errorCallback = function () {
+        alert('Permissions not set');
+      }
+      function checkPermissionCallback(status) {
+        if (!status.hasPermission) {
+          var errorCallback = function () {
+            alert('Permissions not set');
+          }
+
+          permissions.requestPermissions(
+            list,
+            function (status) {
+              if (!status.hasPermission) errorCallback();
+              else
+                onDeviceReady();
+            },
+            errorCallback);
         }
-
-        permissions.requestPermissions(
-          list,
-          function (status) {
-            if (!status.hasPermission) errorCallback();
-            else
-              onDeviceReady();
-          },
-          errorCallback);
+        else {
+          onDeviceReady();
+        }
       }
-      else {
-        onDeviceReady();
-      }
-    }
 
-  }, false);
-} else {
-  console.log("no cordova")
-  onDeviceReady();
+    }, false);
+  } else {
+    console.log("no cordova")
+    onDeviceReady();
+  }
 }
 
